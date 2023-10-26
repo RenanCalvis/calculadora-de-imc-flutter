@@ -23,25 +23,26 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-            title: const Text(
-              "Calculadora de IMC",
-              style: TextStyle(
-                  fontWeight: FontWeight.bold, color: Color(0xffF0F4F2)),
-            ),
-            elevation: 0.0,
-            centerTitle: true,
-            backgroundColor: const Color(0xff739694)),
+          title: Text(
+            "Calculadora de IMC",
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Theme.of(context).colorScheme.onPrimary),
+          ),
+          elevation: 0.0,
+          centerTitle: true,
+        ),
         body: Container(
-          color: const Color(0xff0F1214),
+          color: Theme.of(context).colorScheme.background,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 50),
             child: ListView(
               children: [
-                const Text(
+                Text(
                   "Peso em Kg",
                   textAlign: TextAlign.left,
                   style: TextStyle(
-                      color: Color(0xffF0F4F2),
+                      color: Theme.of(context).colorScheme.onBackground,
                       fontWeight: FontWeight.bold,
                       fontSize: 16),
                 ),
@@ -55,7 +56,8 @@ class _HomePageState extends State<HomePage> {
                   inputFormatters: [
                     FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d*')),
                   ],
-                  style: const TextStyle(color: Colors.white),
+                  style: TextStyle(
+                      color: Theme.of(context).colorScheme.onBackground),
                   decoration: InputDecoration(
                     focusedBorder: const UnderlineInputBorder(
                         borderSide:
@@ -65,24 +67,25 @@ class _HomePageState extends State<HomePage> {
                             BorderSide(color: Colors.blueGrey, width: 2)),
                     prefixIcon: Container(
                       padding: const EdgeInsets.all(10),
-                      child: const FaIcon(
+                      child: FaIcon(
                         FontAwesomeIcons.weightHanging,
-                        color: Color(0xff677A89),
+                        color: Theme.of(context).colorScheme.secondary,
                       ),
                     ),
                     suffixText: "Kg",
-                    suffixStyle:
-                        const TextStyle(color: Colors.white, fontSize: 16),
+                    suffixStyle: TextStyle(
+                        color: Theme.of(context).colorScheme.onBackground,
+                        fontSize: 16),
                   ),
                 ),
                 const SizedBox(
                   height: 15,
                 ),
-                const Text(
+                Text(
                   "Altura em Metros",
                   textAlign: TextAlign.left,
                   style: TextStyle(
-                      color: Color(0xffF0F4F2),
+                      color: Theme.of(context).colorScheme.onBackground,
                       fontWeight: FontWeight.bold,
                       fontSize: 16),
                 ),
@@ -92,7 +95,8 @@ class _HomePageState extends State<HomePage> {
                 TextField(
                   controller: alturaController,
                   keyboardType: TextInputType.number,
-                  style: const TextStyle(color: Colors.white),
+                  style: TextStyle(
+                      color: Theme.of(context).colorScheme.onBackground),
                   decoration: InputDecoration(
                     focusedBorder: const UnderlineInputBorder(
                         borderSide:
@@ -102,14 +106,15 @@ class _HomePageState extends State<HomePage> {
                             BorderSide(color: Colors.blueGrey, width: 2)),
                     prefixIcon: Container(
                       padding: const EdgeInsets.all(10),
-                      child: const FaIcon(
+                      child: FaIcon(
                         FontAwesomeIcons.ruler,
-                        color: Color(0xff677A89),
+                        color: Theme.of(context).colorScheme.secondary,
                       ),
                     ),
                     suffixText: "m",
-                    suffixStyle:
-                        const TextStyle(color: Colors.white, fontSize: 16),
+                    suffixStyle: TextStyle(
+                        color: Theme.of(context).colorScheme.onBackground,
+                        fontSize: 16),
                   ),
                 ),
                 const SizedBox(
@@ -123,12 +128,12 @@ class _HomePageState extends State<HomePage> {
                         shape: MaterialStateProperty.all(RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10))),
                         backgroundColor: MaterialStateProperty.all(
-                          const Color.fromARGB(255, 54, 118, 122),
+                          Theme.of(context).colorScheme.primary,
                         )),
-                    child: const Text(
+                    child: Text(
                       "Calcular",
                       style: TextStyle(
-                          color: Color(0xffF0F4F2),
+                          color: Theme.of(context).colorScheme.onPrimary,
                           fontWeight: FontWeight.w800,
                           fontSize: 18),
                     ),

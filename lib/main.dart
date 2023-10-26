@@ -14,8 +14,20 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          primarySwatch: Colors.blueGrey,
-          inputDecorationTheme: const InputDecorationTheme()),
+        primaryColorDark: const Color(0xff070908),
+        colorScheme: const ColorScheme(
+            brightness: Brightness.light,
+            primary: Color.fromARGB(255, 54, 118, 122),
+            onPrimary: Color(0xffF0F4F2),
+            background: Color(0xff070908),
+            onBackground: Color(0xffF0F4F2),
+            error: Colors.red,
+            secondary: Color(0xff677A89),
+            onSecondary: Color(0xffF0F4F2),
+            onError: Color(0xffF0F4F2),
+            surface:  Color(0xff739694),
+            onSurface: Color(0xffF0F4F2)),
+      ),
       home: const HomePage(),
     );
   }
